@@ -1,0 +1,261 @@
+# Test API Authentication
+
+### User Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "pchihieuu@gmail.com",
+  "password": "hieudz1221"
+}
+
+### User Registration
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Hieu Phan",
+  "password": "hieudz1221",
+  "email": "pchihieuu@gmail.com"
+}
+# "name": "Hieu Phan",
+#   "password": "hieudz1221",
+#   "email": "hieup3611@gmail.com"
+
+### Validate Token
+GET http://localhost:8080/api/auth/validate
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+
+# Test User Endpoints
+
+### Get User Profile
+GET http://localhost:8080/api/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+### Update User Profile
+PUT http://localhost:8080/api/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+Content-Type: application/json
+
+{
+  "name": "Hieu Phan Chi",
+  "email": "hieup3611@gmail.com"
+}
+
+### Get User By ID
+GET http://localhost:8080/api/user/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+# Test Post Endpoints
+
+### Get All Posts
+GET http://localhost:8080/api/posts/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+### Create Post
+POST http://localhost:8080/api/posts/
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="title"
+
+Cloudfront là gì? Những kiến thức cơ bản developer phải biết về Cloudfront
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="description"
+
+AWS CloudFront là CDN (Content Delivery Network) được cung cấp bởi Amazon Web Services. Dịch vụ được bảo mật bởi cơ sở hạ tầng AWS.
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="content"
+
+AWS Cloudfront là dịch vụ CDN (Content Delivery Network) giúp tăng tốc độ phân phối nội dung web tĩnh (chủ yếu là S3) và động (EC2 cho tĩnh/động) cho người dùng.
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="topic_id"
+
+1
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="./static/1.jpg"
+Content-Type: image/jpeg
+
+<anhsieudep>
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+
+
+### Get Post By ID
+### Get Post By ID
+GET http://localhost:8080/api/posts/2
+Authorization: Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+### Update Post ---fix: OK
+PUT http://localhost:8080/api/posts/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+Content-Type: application/json
+
+{
+  "title": "Cookies là gì? Cookies được sử dụng như thế nào?",
+  "description": "Cookies giúp lưu trữ thông tin về phiên làm việc (session), thói quen nhằm mục đích cải thiện trải nghiệm hoặc theo dõi và phân tích hành vi người dùng.",
+  "user_id": 1,
+  "topic_id": 1
+}
+
+
+### Delete Post ---fix: OK
+DELETE http://localhost:8080/api/posts/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+### Get Posts By Topic ID
+GET http://localhost:8080/api/posts/topic/1
+
+### Get Topic Of Post --> error: fix
+GET http://localhost:8080/api/posts/2/topic
+
+### Get Trending Posts
+GET http://localhost:8080/api/posts/trending
+
+### Get Following Posts
+GET http://localhost:8080/api/posts/following/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+### Get Posts From Subscribed Topics
+GET http://localhost:8080/api/posts/subscribed/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+### Search Posts
+GET http://localhost:8080/api/posts/?search=keyword
+
+# Test Topic Endpoints
+
+### Get All Topics
+GET http://localhost:8080/api/topics/
+
+### Create Topic
+POST http://localhost:8080/api/topics/
+Content-Type: application/json
+
+{
+  "name": "Naturals"
+}
+
+### Get Topic By ID
+GET http://localhost:8080/api/topics/2
+
+# Test Comment Endpoints
+
+### Get All Comments
+GET http://localhost:8080/api/comments/
+
+### Create Comment
+POST http://localhost:8080/api/comments/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+Content-Type: application/json
+{
+  "content": "New comments",
+  "user_id":1,
+  "post_id":2,
+}
+
+### Get Comment By ID
+GET http://localhost:8080/api/comments/4
+
+### Update Comment
+PUT http://localhost:8080/api/comments/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+Content-Type: application/json
+
+{
+  
+  "id": 1,
+  "content": "Updated comment content",
+  "post_id": 2,
+  "user_id": 1
+
+
+}
+
+### Delete Comment
+DELETE http://localhost:8080/api/comments/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+### Get Comments By Post ID
+GET http://localhost:8080/api/comments/post/2
+
+### Count Comments By Post ID
+GET http://localhost:8080/api/comments/count/2
+
+# Test Follower Endpoints
+
+### Get All Followers
+GET http://localhost:8080/api/followers/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+### Get All Following
+GET http://localhost:8080/api/followers/following/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+
+###
+POST http://localhost:8080/api/followers/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "follower_id": 1
+}
+
+
+### Unfollow User
+DELETE http://localhost:8080/api/followers/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzMzMSwiaWF0IjoxNzIzNDcxMzMxLCJpc3MiOiJibG9nIn0.CaZMoApJyo5WJM52N3_GbUO4a61OEXpkAHgZuIPdyhM
+
+### Check If Following
+GET http://localhost:8080/api/followers/is_following/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzMzMSwiaWF0IjoxNzIzNDcxMzMxLCJpc3MiOiJibG9nIn0.CaZMoApJyo5WJM52N3_GbUO4a61OEXpkAHgZuIPdyhM
+
+# Test Like Endpoints
+
+### Get All Likes
+GET http://localhost:8080/api/likes/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+
+### Like Post
+POST http://localhost:8080/api/likes/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+Content-Type: application/json
+
+{
+  "post_id": 2
+}
+
+### Unlike Post
+DELETE http://localhost:8080/api/likes/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+
+### Count Likes
+GET http://localhost:8080/api/likes/count/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+### Check If Liked
+GET http://localhost:8080/api/likes/is_liked/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+
+# Test Subscribe Endpoints
+
+### Get All Subscribes
+GET http://localhost:8080/api/subscribes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+
+### Subscribe Topic
+POST http://localhost:8080/api/subscribes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+
+### Unsubscribe Topic
+DELETE http://localhost:8080/api/subscribes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+
+### Count Subscribes
+GET http://localhost:8080/api/subscribes/count/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+### Check If Subscribed
+GET http://localhost:8080/api/subscribes/is_subscribed/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
