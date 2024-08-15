@@ -107,7 +107,7 @@ export const Nav: React.FC<{}> = () => {
             <a href="/user/profile" className="flex flex-wrap gap-2">
               <div className="w-10 h-10 rounded-full cursor-pointer">
                 <Avatar
-                  img="https://ashpex.eu.org/images/avatar.webp"
+                  img="https://m.yodycdn.com/blog/hinh-anh-meo-hai-huoc-yodyvn37.jpg"
                   rounded={true}
                   bordered={true}
                   data-dropdown-toggle="userDropdown"
