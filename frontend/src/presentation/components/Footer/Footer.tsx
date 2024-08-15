@@ -10,10 +10,10 @@ const Footer = () => {
             <img
               src={logo}
               className="mr-3 h-8"
-              alt="ZaloPay Logo"
+              alt="Go Logo"
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Gallery
+            TechSavvy
             </span>
           </a>
           <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
@@ -41,9 +41,9 @@ const Footer = () => {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          © 2022{" "}
+          © 2024{" "}
           <a href="/" className="hover:underline">
-            ZaloPay
+          TechSavvy
           </a>
           . All Rights Reserved.
         </span>
