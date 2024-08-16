@@ -5,7 +5,7 @@ POST http://localhost:8080/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "pchihieuu@gmail.com",
+  "email": "hieup3611@gmail.com",
   "password": "hieudz1221"
 }
 
@@ -243,11 +243,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6
 
 ### Get All Subscribes
 GET http://localhost:8080/api/subscribes/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
 
 ### Subscribe Topic
-POST http://localhost:8080/api/subscribes/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+POST http://localhost:8080/api/subscribes/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
 
 ### Unsubscribe Topic
 DELETE http://localhost:8080/api/subscribes/1
@@ -255,7 +255,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsI
 
 ### Count Subscribes
 GET http://localhost:8080/api/subscribes/count/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
 ### Check If Subscribed
-GET http://localhost:8080/api/subscribes/is_subscribed/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE
+GET http://localhost:8080/api/subscribes/is_subscribed/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsImV4cCI6MTc1NTAwNzY5MSwiaWF0IjoxNzIzNDcxNjkxLCJpc3MiOiJibG9nIn0.8d5M5z_6prHVlYmZx9ZbIE0Z1O3-PYplsdi7HK1sKJE

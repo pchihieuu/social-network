@@ -1,0 +1,24 @@
+/* Custom Slick Carousel Navigation Arrows */
+.slick-prev,
+.slick-next {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: 'slick';
+    font-size: 20px; /* Adjust as needed */
+    line-height: 1;
+    opacity: 0.75;
+    color: black; /* Arrow color */
+}
+
+.slick-prev {
+    left: 10px; /* Position for left arrow */
+}
+
+.slick-next {
+    right: 10px; /* Position for right arrow */
+}

@@ -23,6 +23,7 @@ import { LogOut } from "./domain/api/user";
 import UpdateProfile from "./presentation/pages/UpdateProfile";
 import TestHook from "./presentation/pages/TestHook";
 import Search from "./presentation/pages/Search";
+import About from "./presentation/pages/About";
 function App() {
   return (
     <div className="App">
@@ -32,6 +33,7 @@ function App() {
             <Nav />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
               <Route
                 path="/upload"
                 element={<PrivateRoute outlet={<Upload />} />}
