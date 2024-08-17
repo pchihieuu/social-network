@@ -16,6 +16,12 @@
 //	}
 package entity
 
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
+
 // User struct represents a user in the system.
 type User struct {
 	ID        uint64      `gorm:"primaryKey;autoIncrement" json:"id" form:"id"`
@@ -29,6 +35,8 @@ type User struct {
 	Followers *[]Follower `json:"followers,omitempty"`
 	Following *[]Follower `json:"following,omitempty"`
 	// Fields for Google OAuth
-	GoogleID  string `gorm:"uniqueIndex;type:varchar(255)" json:"google_id,omitempty"`
-	AvatarURL string `json:"avatar_url,omitempty"`
+	// Timestamps
+	CreatedAt time.Time      `gorm:"autoCreateTime" json:"created_at"`
+	UpdatedAt time.Time      `gorm:"autoUpdateTime" json:"updated_at"`
+	DeletedAt gorm.DeletedAt `gorm:"index" json:"deleted_at,omitempty"`
 }

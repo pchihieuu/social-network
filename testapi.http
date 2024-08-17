@@ -5,7 +5,7 @@ POST http://localhost:8080/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "hieup3611@gmail.com",
+  "email": "pchihieuu@gmail.com",
   "password": "hieudz1221"
 }
 
@@ -85,24 +85,24 @@ Content-Type: image/jpeg
 
 ### Get Post By ID
 ### Get Post By ID
-GET http://localhost:8080/api/posts/2
+GET http://localhost:8080/api/posts/5
 Authorization: Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
 
 ### Update Post ---fix: OK
-PUT http://localhost:8080/api/posts/1
+PUT http://localhost:8080/api/posts/5
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
 Content-Type: application/json
 
 {
-  "title": "Cookies là gì? Cookies được sử dụng như thế nào?",
-  "description": "Cookies giúp lưu trữ thông tin về phiên làm việc (session), thói quen nhằm mục đích cải thiện trải nghiệm hoặc theo dõi và phân tích hành vi người dùng.",
-  "user_id": 1,
+  "title": "SSL/ TLS và HTTPS là gì? Giải pháp Bảo mật an toàn",
+  "description": "HTTPS là phiên bản bảo mật của giao thức HTTP, nhờ có sự hỗ trợ của SSL/TLS, được sử dụng để truyền tải dữ liệu giữa trình duyệt web và máy chủ web.",
+  "user_id": 2,
   "topic_id": 1
 }
 
 
 ### Delete Post ---fix: OK
-DELETE http://localhost:8080/api/posts/1
+DELETE http://localhost:8080/api/posts/5
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsImV4cCI6MTc1NTAwMjUyMCwiaWF0IjoxNzIzNDY2NTIwLCJpc3MiOiJibG9nIn0.HDhdWc5kbJso80ed5y5o4h928eClr5QyOozZUfd4K-4
 
 ### Get Posts By Topic ID

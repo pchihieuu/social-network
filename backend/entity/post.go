@@ -21,6 +21,12 @@
 //	}
 package entity
 
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
+
 // Post struct represents a post in the config.
 type Post struct {
 	ID          uint64     `gorm:"primaryKey;autoIncrement" json:"id" form:"id"`
@@ -34,6 +40,10 @@ type Post struct {
 	Likes       *[]Like    `gorm:"foreignKey:PostID;constraint:onUpdate:CASCADE,onDelete:SET NULL" json:"likes,omitempty"`
 	LikesCount  int        `json:"likes_count"`
 	ImagePath   string     `gorm:"type:varchar(255)" json:"image_path" form:"image_path"`
+	// Timestamps
+	CreatedAt time.Time      `gorm:"autoCreateTime" json:"created_at"`
+	UpdatedAt time.Time      `gorm:"autoUpdateTime" json:"updated_at"`
+	DeletedAt gorm.DeletedAt `gorm:"index" json:"deleted_at,omitempty"`
 	// Uncomment if you need to handle file uploads
 	// Photo      *multipart.FileHeader `json:"photo,omitempty"`
 	// PhotoUrl   string `json:"photo_url"`
