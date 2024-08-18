@@ -1,0 +1,107 @@
+version: '3.7'
+
+services:
+  db:
+    container_name: "techsavvy-db"
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    networks:
+      - default
+    restart: always
+    ports:
+      # <Port exposed> : < PostgreSQL Port running inside container>
+      - "5432:5432"
+    # setting some env vars to create the DB
+    environment:
+      POSTGRESQL_ROOT_PASSWORD: "123456"
+      POSTGRESQL_DATABASE: "blog"
+      # OR if you want to use "root" as the user, just these two lines
+      # POSTGRESQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      # POSTGRESQL_DATABASE: ${DATABASE_NAME}
+
+    # we mount a data volume to make sure we don't lose data
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  api:
+    container_name:  "techsavvy-api"
+    # we want to use the image which is build from our Dockerfile
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    environment:
+      DB_USER: postgres
+      DB_PASS: 123456
+      DB_HOST: host.docker.internal
+      DB_PORT: 5432
+      DB_NAME: blog
+      JWT_SECRET: blog
+    # we are depending on the postgresql backend
+    depends_on:
+      - db
+    networks:
+      - default
+    # We mount the working dir into the container, handy for development
+    # This is what makes the hot reloading work inside a Docker container
+    volumes:
+      - .:/app/
+  nginx:
+    container_name: "nginx"
+    image: nginx
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    #volumes:
+    #  - .:/etc/nginx/conf.d/
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    restart: always
+    networks:
+      - default
+    command: ["/usr/sbin/nginx", "-g", "daemon off;"]
+  prometheus:
+    container_name: Prometheus
+    image: prom/prometheus:latest
+    ports:
+      - 9090:9090
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.console.libraries=/etc/prometheus/console_libraries
+      - --web.console.templates=/etc/prometheus/consoles
+      - --storage.tsdb.retention.time=200h
+      - --web.enable-lifecycle
+    volumes:
+      - ./monitor/prometheus:/etc/prometheus
+      #- prometheus:/prometheus
+      - ./monitor/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+      - api
+      - db
+  grafana:
+    container_name: Grafana
+    image: grafana/grafana
+    ports:
+      - 4000:3000
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - ./data:/var/lib/grafana
+      - ./monitor/grafana/provisioning:/etc/grafana/provisioning
+    restart: always
+    depends_on:
+      - prometheus
+
+networks:
+  default:
+volumes:
+  postgres_data:
