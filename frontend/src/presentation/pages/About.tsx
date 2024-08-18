@@ -32,35 +32,32 @@ const About: React.FC = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Slider Section */}
-      <section className="relative w-full h-64">
-        <Slider {...settings} className="w-full h-full relative">
-          <div className="relative w-full h-full flex items-center justify-center bg-gray-300">
+      <section className="relative w-full overflow-hidden">
+        <Slider {...settings} className="relative w-full">
+          <div className="relative w-full h-80 flex items-center justify-center">
             <img
-              src="https://via.placeholder.com/1200x400"
+              src="https://static.vecteezy.com/system/resources/previews/005/425/624/non_2x/internet-entertainment-concept-3d-landscape-orientation-banner-with-copy-space-vector.jpg"
               alt="Banner Slide 1"
               className="absolute inset-0 object-cover w-full h-full"
-              style={{ objectFit: "cover" }} // Ensure images are not distorted
+              style={{ objectFit: "cover" }}
             />
-            <div className="relative p-8 text-center text-white">
-              <h1 className="text-4xl font-extrabold">About Us</h1>
-              <p className="text-lg mt-4">
-                Welcome to TechSavvy, where we strive to bring you the latest and greatest in technology.
-              </p>
-            </div>
           </div>
-          <div className="relative w-full h-full flex items-center justify-center bg-gray-300">
+          <div className="relative w-full h-80 flex items-center justify-center">
             <img
-              src="https://via.placeholder.com/1200x400"
+              src="https://static.vecteezy.com/system/resources/previews/008/079/258/non_2x/using-smartphone-for-entertainment-3d-vertical-banner-with-copy-space-free-vector.jpg"
               alt="Banner Slide 2"
               className="absolute inset-0 object-cover w-full h-full"
-              style={{ objectFit: "cover" }} // Ensure images are not distorted
+              style={{ objectFit: "cover" }}
             />
-            <div className="relative p-8 text-center text-white">
-              <h1 className="text-4xl font-extrabold">Our Vision</h1>
-              <p className="text-lg mt-4">
-                Discover how TechSavvy envisions the future of technology.
-              </p>
-            </div>
+          </div>
+          <div className="relative w-full h-80 flex items-center justify-center">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/005/425/777/non_2x/falling-gift-boxes-3d-landscape-orientation-banner-with-copy-space-vector.jpg"
+              alt="Banner Slide 2"
+              className="absolute inset-0 object-cover w-full h-full"
+              style={{ objectFit: "cover" }}
+            />
+            
           </div>
           {/* Add more slides as needed */}
         </Slider>
@@ -89,12 +86,12 @@ const About: React.FC = () => {
                 <div className="flex flex-wrap justify-center gap-6">
                   {/* Example team members */}
                   <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img className="w-24 h-24 mx-auto rounded-full" src="https://via.placeholder.com/100" alt="Team Member" />
+                    <img className="w-24 h-24 mx-auto rounded-full" src="https://i.pravatar.cc/128" alt="Team Member" />
                     <h3 className="text-xl font-semibold text-gray-900 mt-4">John Doe</h3>
                     <p className="text-gray-600">CEO</p>
                   </div>
                   <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img className="w-24 h-24 mx-auto rounded-full" src="https://via.placeholder.com/100" alt="Team Member" />
+                    <img className="w-24 h-24 mx-auto rounded-full" src="https://i.pravatar.cc/128" alt="Team Member" />
                     <h3 className="text-xl font-semibold text-gray-900 mt-4">Jane Smith</h3>
                     <p className="text-gray-600">CTO</p>
                   </div>

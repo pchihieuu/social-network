@@ -53,6 +53,14 @@ export const Nav: React.FC<{}> = () => {
                   Home
                 </a>
               </li>
+              <li>
+                <a
+                  href="/about"
+                  className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  About
+                </a>
+              </li>
 
               <li>
                 <a
@@ -62,6 +70,7 @@ export const Nav: React.FC<{}> = () => {
                   Login
                 </a>
               </li>
+              
             </ul>
           </div>
           <div className="flex md:order-last gap-3">
@@ -103,7 +112,6 @@ export const Nav: React.FC<{}> = () => {
               <span className="sr-only">Open menu</span>
               <BiMenu className="h-6 w-6" color="gray" />
             </button>
-            
             <a href="/user/profile" className="flex flex-wrap gap-2">
               <div className="w-10 h-10 rounded-full cursor-pointer">
                 <Avatar
@@ -115,7 +123,6 @@ export const Nav: React.FC<{}> = () => {
                 />
               </div>
             </a>
-
           </div>
           <div
             className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
